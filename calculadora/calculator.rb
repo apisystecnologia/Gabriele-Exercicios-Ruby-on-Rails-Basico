@@ -13,7 +13,7 @@ while (line = gets)
       result = operands[0]*operands[1]
     elsif operator == "/"
       result = operands[1]/operands[0]
-    else operator
+    else 
       result = operands[1]-operands[0]
     end
     puts result
