@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   database: my_db_name
   username: root
-  password: gabriele
+  password: ********
   host: 127.0.0.1
   port: 3306
 
