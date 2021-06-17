@@ -614,3 +614,235 @@ Processing by ProdutosController#index as HTML
 Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 10:36:47 -0300
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 332ms (Views: 319.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2021-06-17 10:37:01 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (27.2ms)
+  Rendered produtos/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2021-06-17 10:37:13 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j2yY++7ZqawTkM4OpfjEIpvRCAi4aq8Ej+sjIk5FNWuexj4uh5hRWhEXk6VfUzHOs4JSkf3gd4xWDfTrUBOpTg==", "produto"=>{"name"=>"LG", "code"=>"19283", "price"=>"2000.0"}, "commit"=>"Create Produto"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.6ms)[0m  [1m[32mINSERT INTO `produtos` (`name`, `code`, `price`, `created_at`, `updated_at`) VALUES ('LG', '19283', 2000.0, '2021-06-17 13:37:13', '2021-06-17 13:37:13')[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/2
+Completed 302 Found in 9ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/produtos/2" for 127.0.0.1 at 2021-06-17 10:37:13 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 10:37:15 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/produtos/1" for 127.0.0.1 at 2021-06-17 10:38:17 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hwiCOylNOWHoh/4hbyfF/9pIU7uli2J2HhqVdWlkiwl4nnTlMP0UryU53fv/MJhxFxqBPL9UWzaY55D+x5JcCQ==", "id"=>"1"}
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/produtos_controller.rb:52
+  [1m[36mProduto Destroy (0.4ms)[0m  [1m[31mDELETE FROM `produtos` WHERE `produtos`.`id` = 1[0m
+  ↳ app/controllers/produtos_controller.rb:52
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/produtos_controller.rb:52
+Redirected to http://localhost:3000/produtos
+Completed 302 Found in 25ms (ActiveRecord: 22.1ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 10:38:17 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 11:47:30 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 340ms (Views: 328.7ms | ActiveRecord: 3.9ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (0.5ms)[0m  [1m[32mINSERT INTO `produtos` (`name`, `code`, `price`, `created_at`, `updated_at`) VALUES ('Mac', '5678', 8000.0, '2021-06-17 14:48:39', '2021-06-17 14:48:39')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 11:48:53 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 282ms (Views: 271.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2021-06-17 11:48:55 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (5.9ms)
+  Rendered produtos/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2021-06-17 11:49:11 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lf8+/Ywj6+LOSWP79uKwWx3woxD6PtvPTp5V6cO9HY08VZgo5WITFMzOPlAMSUW3NaP5ib+0A0eXeIIg3euBqA==", "produto"=>{"name"=>"samsung", "code"=>"9808", "price"=>"3000.0"}, "commit"=>"Create Produto"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.6ms)[0m  [1m[32mINSERT INTO `produtos` (`name`, `code`, `price`, `created_at`, `updated_at`) VALUES ('samsung', '9808', 3000.0, '2021-06-17 14:49:11', '2021-06-17 14:49:11')[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/4
+Completed 302 Found in 11ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/produtos/4" for 127.0.0.1 at 2021-06-17 11:49:11 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 11:49:13 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/4/edit" for 127.0.0.1 at 2021-06-17 11:49:15 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  Rendering produtos/edit.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (2.5ms)
+  Rendered produtos/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/produtos/4" for 127.0.0.1 at 2021-06-17 11:49:19 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ngi2pP2ZqHmZwO+1ux0FAUUn+5irYYmlt2/BnLcB2fFcroTW0vqiOL9eBeYIQo2f9W4qaw5to/0+7PFW7DqRzg==", "produto"=>{"name"=>"Samsung", "code"=>"9808", "price"=>"3000.0"}, "commit"=>"Update Produto", "id"=>"4"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[36mProduto Update (0.4ms)[0m  [1m[33mUPDATE `produtos` SET `name` = 'Samsung', `updated_at` = '2021-06-17 14:49:19' WHERE `produtos`.`id` = 4[0m
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/produtos_controller.rb:40
+Redirected to http://localhost:3000/produtos/4
+Completed 302 Found in 9ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/produtos/4" for 127.0.0.1 at 2021-06-17 11:49:19 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 11:49:21 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2021-06-17 11:49:40 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (2.9ms)
+  Rendered produtos/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2021-06-17 11:49:53 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWWQ6Wbc4Fm0xqG+Pu41fYoI197IKwOT42lsivycxLJQzzY8D50Yr7ZB/BXERcCRoluNR42h2xs6j7tD4spYlw==", "produto"=>{"name"=>"Dell", "code"=>"3456", "price"=>"4000.0"}, "commit"=>"Create Produto"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.5ms)[0m  [1m[32mINSERT INTO `produtos` (`name`, `code`, `price`, `created_at`, `updated_at`) VALUES ('Dell', '3456', 4000.0, '2021-06-17 14:49:53', '2021-06-17 14:49:53')[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/5
+Completed 302 Found in 8ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/produtos/5" for 127.0.0.1 at 2021-06-17 11:49:53 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 11:49:55 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
