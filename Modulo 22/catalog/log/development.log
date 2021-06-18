@@ -1,0 +1,818 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateProducts (20210618140457)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210618140457_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210618140457"]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-18 14:05:18.256446"], ["updated_at", "2021-06-18 14:05:18.256446"]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:05:41 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 1366ms (Views: 1353.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:05:54 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 217ms (Views: 210.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-06-18 11:05:56 -0300
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (17.4ms)
+  Rendered products/new.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-06-18 11:06:10 -0300
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UO7TNYbSv3u7BkWTyUhJ4qf99Z8kRTTgHstdsdpZL9IBRslHzt+FUrvqrrhmHCbQg2cdAkCeOPa+dLwnfw9h5g==", "product"=>{"name"=>"Iphone 6s", "price"=>"6400"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:27
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Iphone 6s"], ["price", 6400.0], ["created_at", "2021-06-18 14:06:10.289700"], ["updated_at", "2021-06-18 14:06:10.289700"]]
+  ↳ app/controllers/products_controller.rb:27
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:27
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:06:10 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:06:12 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-06-18 11:06:13 -0300
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.7ms)
+  Rendered products/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-06-18 11:06:26 -0300
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HwGJvhvP0C64FdsxLNTcLul0Y1KN1PKee5Z0bQYqXsVOqZPMU8LqB7j5MBqDgLMcze6Lz+kP/ojbKZX7o3wQ8Q==", "product"=>{"name"=>"Galaxy S6 Edge", "price"=>"2800"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:27
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Galaxy S6 Edge"], ["price", 2800.0], ["created_at", "2021-06-18 14:06:26.972632"], ["updated_at", "2021-06-18 14:06:26.972632"]]
+  ↳ app/controllers/products_controller.rb:27
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:27
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2021-06-18 11:06:26 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:06:29 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to AddAttachmentAvatarToProducts (20210618141221)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "avatar_file_name" varchar[0m
+  ↳ db/migrate/20210618141221_add_attachment_avatar_to_products.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" ADD "avatar_content_type" varchar[0m
+  ↳ db/migrate/20210618141221_add_attachment_avatar_to_products.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "avatar_file_size" bigint[0m
+  ↳ db/migrate/20210618141221_add_attachment_avatar_to_products.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ADD "avatar_updated_at" datetime[0m
+  ↳ db/migrate/20210618141221_add_attachment_avatar_to_products.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210618141221"]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:23:05 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 321ms (Views: 302.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:23:12 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/avatars/original/missing.png" for 127.0.0.1 at 2021-06-18 11:23:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/avatars/original/missing.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:23:16 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Started GET "/avatars/original/missing.png" for 127.0.0.1 at 2021-06-18 11:23:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/avatars/original/missing.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-06-18 11:23:23 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (9.9ms)
+  Rendered products/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-06-18 11:23:39 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lVFpb8ZcqR+0iPECX4QJ6NctGiGKZLWquTk4z0b+oHQY3BG5EYnriwqlvgtW6AYSR7RRc92BwZ+LSTdubT9RQA==", "product"=>{"name"=>"Iphone 6s", "price"=>"6400.0", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f6b7c37f548 @tempfile=#<Tempfile:/tmp/RackMultipart20210618-56246-1rj86gv.png>, @original_filename="Screenshot from 2021-06-08 10-36-13.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[avatar]\"; filename=\"Screenshot from 2021-06-08 10-36-13.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+[paperclip] Trying to link /tmp/RackMultipart20210618-56246-1rj86gv.png to /tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-pzlejh.png
+[paperclip] Trying to link /tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-pzlejh.png to /tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-1p3jg8j.png
+Command :: file -b --mime '/tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-1p3jg8j.png'
+[paperclip] Trying to link /tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-pzlejh.png to /tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-9pszbo.png
+Command :: file -b --mime '/tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-9pszbo.png'
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["avatar_file_name", "Screenshot_from_2021-06-08_10-36-13.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 159837], ["avatar_updated_at", "2021-06-18 14:23:39.490686"], ["updated_at", "2021-06-18 14:23:39.501199"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:40
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 25ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:23:39 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:25:35 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 22.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/system/products/avatars/000/000/001/thumb/Screenshot_from_2021-06-08_10-36-13.png?1624026219" for 127.0.0.1 at 2021-06-18 11:25:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/system/products/avatars/000/000/001/thumb/Screenshot_from_2021-06-08_10-36-13.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-06-18 11:25:51 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.3ms)
+  Rendered products/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/system/products/avatars/000/000/001/thumb/Screenshot_from_2021-06-08_10-36-13.png?1624026219" for 127.0.0.1 at 2021-06-18 11:25:51 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/system/products/avatars/000/000/001/thumb/Screenshot_from_2021-06-08_10-36-13.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/1" for 127.0.0.1 at 2021-06-18 11:25:59 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VvNycu9sAP1EETvoh7UI2PyLuGkcgqhndjxtWkh+/LbbfgqkOLlCafo8dOGO2QcibBLzO0tn3FJETGL7Y78Ngg==", "product"=>{"name"=>"Iphone 6s", "price"=>"6400.0", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f6b85d20b20 @tempfile=#<Tempfile:/tmp/RackMultipart20210618-56246-4kv7yi.png>, @original_filename="Screenshot from 2021-06-08 10-36-13.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[avatar]\"; filename=\"Screenshot from 2021-06-08 10-36-13.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+[paperclip] Trying to link /tmp/RackMultipart20210618-56246-4kv7yi.png to /tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png
+[paperclip] Trying to link /tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png to /tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-aawv09.png
+Command :: file -b --mime '/tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-aawv09.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png[0]'
+Command :: convert '/tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png[0]' -auto-orient -resize "330x300>" '/tmp/f280fda59305544eb7346f2e9c8ebdc220210618-56246-ny3wdf'
+[paperclip] Trying to link /tmp/f280fda59305544eb7346f2e9c8ebdc220210618-56246-ny3wdf to /tmp/45a7e700bd760393a958756822103fdc20210618-56246-io4180
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png[0]'
+Command :: convert '/tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png[0]' -auto-orient -resize "100x100>" '/tmp/f280fda59305544eb7346f2e9c8ebdc220210618-56246-1r4gyrp'
+[paperclip] Trying to link /tmp/f280fda59305544eb7346f2e9c8ebdc220210618-56246-1r4gyrp to /tmp/ad004035ffb4a6dd40a6814ccc95ee8f20210618-56246-pxveyy
+[paperclip] Trying to link /tmp/c6a9b36c956c4c2f04301702f952a9be20210618-56246-fjxp2f.png to /tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-xpji10.png
+Command :: file -b --mime '/tmp/7c88b9b9a5307907c7a79be009d3a69020210618-56246-xpji10.png'
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "avatar_file_name" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["avatar_file_name", "Screenshot_from_2021-06-08_10-36-13.png"], ["avatar_updated_at", "2021-06-18 14:25:59.073119"], ["updated_at", "2021-06-18 14:25:59.361776"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:40
+[paperclip] deleting /home/gabrielerocha/codes-RailsBasico/Modulo 22/catalog/public/system/products/avatars/000/000/001/original/Screenshot_from_2021-06-08_10-36-13.png
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 308ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:25:59 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to DeviseCreateAdminUsers (20210618143654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210618143654_devise_create_admin_users.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210618143654_devise_create_admin_users.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  ↳ db/migrate/20210618143654_devise_create_admin_users.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  ↳ db/migrate/20210618143654_devise_create_admin_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210618143654"]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateActiveAdminComments (20210618143659)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_type" varchar, "resource_id" integer, "author_type" varchar, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210618143659_create_active_admin_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  ↳ db/migrate/20210618143659_create_active_admin_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  ↳ db/migrate/20210618143659_create_active_admin_comments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  ↳ db/migrate/20210618143659_create_active_admin_comments.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210618143659"]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Create (0.4ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$12$dW2fFzE2EkO8Jw1uJ2oDNevTVPIzpKAuFp4tg9OtRkEIFXco0lRMe"], ["created_at", "2021-06-18 14:38:08.008930"], ["updated_at", "2021-06-18 14:38:08.008930"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+Started GET "/admin" for 127.0.0.1 at 2021-06-18 11:38:53 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2021-06-18 11:38:53 -0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/devise/shared/_links.erb (2.2ms)
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (40.5ms)
+Completed 200 OK in 2603ms (Views: 2580.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2021-06-18 11:39:14 -0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pr/lrC0mFPHp+EP/SWjTnnX280EiIGU0ayycn7CugZgxTAd42TXdYzUlrOjuJudG6jmiKj6JZQh8r8TAiQ4hxA==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 466ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-06-18 11:39:15 -0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/page/index.html.arb
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/page/index.html.arb (90.6ms)
+Completed 200 OK in 102ms (Views: 95.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-06-18 11:40:27 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/page/index.html.arb
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/page/index.html.arb (556.5ms)
+Completed 200 OK in 585ms (Views: 560.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2021-06-18 11:40:30 -0300
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/helpers/collection.rb:9
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb (160.6ms)
+Completed 200 OK in 178ms (Views: 166.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/products?order=id_asc" for 127.0.0.1 at 2021-06-18 11:40:39 -0300
+Processing by Admin::ProductsController#index as HTML
+  Parameters: {"order"=>"id_asc"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/helpers/collection.rb:9
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb (181.6ms)
+Completed 200 OK in 187ms (Views: 183.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:40:55 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 308ms (Views: 305.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:40:58 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 101ms (Views: 98.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-06-18 11:41:00 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (7.1ms)
+  Rendered products/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 156ms (Views: 154.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-06-18 11:41:05 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cq4SbaJUkB356puCjPY9FpGJLELxvFlzEL7zXVdxcuez2s9diFxAN9jogwKrVgvQzw5fQDK2gUPOPJ5IEovCaA==", "product"=>{"name"=>"Iphone 6s", "price"=>"6400.0", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007ff0ea237db8 @tempfile=#<Tempfile:/tmp/RackMultipart20210618-57025-rkuw77.png>, @original_filename="Screenshot from 2021-06-08 12-13-34.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[avatar]\"; filename=\"Screenshot from 2021-06-08 12-13-34.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+[paperclip] Trying to link /tmp/RackMultipart20210618-57025-rkuw77.png to /tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png
+[paperclip] Trying to link /tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png to /tmp/ec33e83390f814d95760438e289719b520210618-57025-1r52onb.png
+Command :: file -b --mime '/tmp/ec33e83390f814d95760438e289719b520210618-57025-1r52onb.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png[0]'
+Command :: convert '/tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png[0]' -auto-orient -resize "330x300>" '/tmp/4b9b0a3952d60178c8ac8e5f8b1afa5820210618-57025-14ru46o'
+[paperclip] Trying to link /tmp/4b9b0a3952d60178c8ac8e5f8b1afa5820210618-57025-14ru46o to /tmp/89c6094efdeb3af430757fd390b4803620210618-57025-bthwif
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png[0]'
+Command :: convert '/tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png[0]' -auto-orient -resize "100x100>" '/tmp/4b9b0a3952d60178c8ac8e5f8b1afa5820210618-57025-1l2zhmv'
+[paperclip] Trying to link /tmp/4b9b0a3952d60178c8ac8e5f8b1afa5820210618-57025-1l2zhmv to /tmp/f0fa2c45609b4db0e0a42d254631509720210618-57025-j0ivik
+[paperclip] Trying to link /tmp/4f1f6259fe80fc7d470e5456216bcfaf20210618-57025-10145.png to /tmp/ec33e83390f814d95760438e289719b520210618-57025-r4t7ow.png
+Command :: file -b --mime '/tmp/ec33e83390f814d95760438e289719b520210618-57025-r4t7ow.png'
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "avatar_file_name" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["avatar_file_name", "Screenshot_from_2021-06-08_12-13-34.png"], ["avatar_file_size", 129396], ["avatar_updated_at", "2021-06-18 14:41:05.332034"], ["updated_at", "2021-06-18 14:41:05.781781"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:40
+[paperclip] deleting /home/gabrielerocha/codes-RailsBasico/Modulo 22/catalog/public/system/products/avatars/000/000/001/original/Screenshot_from_2021-06-08_10-36-13.png
+[paperclip] deleting /home/gabrielerocha/codes-RailsBasico/Modulo 22/catalog/public/system/products/avatars/000/000/001/medium/Screenshot_from_2021-06-08_10-36-13.png
+[paperclip] deleting /home/gabrielerocha/codes-RailsBasico/Modulo 22/catalog/public/system/products/avatars/000/000/001/thumb/Screenshot_from_2021-06-08_10-36-13.png
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 479ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-06-18 11:41:05 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 143ms (Views: 141.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:41:10 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 107ms (Views: 104.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/products?order=id_asc" for 127.0.0.1 at 2021-06-18 11:41:12 -0300
+Processing by Admin::ProductsController#index as HTML
+  Parameters: {"order"=>"id_asc"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/helpers/collection.rb:9
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb (164.5ms)
+Completed 200 OK in 172ms (Views: 167.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2021-06-18 11:41:18 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 117ms (Views: 114.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/avatars/thumb/missing.png" for 127.0.0.1 at 2021-06-18 11:41:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/avatars/thumb/missing.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/2/edit" for 127.0.0.1 at 2021-06-18 11:41:19 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.5ms)
+  Rendered products/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 153ms (Views: 150.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/avatars/thumb/missing.png" for 127.0.0.1 at 2021-06-18 11:41:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/avatars/thumb/missing.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/2" for 127.0.0.1 at 2021-06-18 11:41:23 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hSqdk6I7alb9f/DroaL4u3ShwZYRR4CYUXVl8oa9bcxgXv81spNpEvioPnVH3zGYMY6mspURapgltCAaTTONQ==", "product"=>{"name"=>"Galaxy S6 Edge", "price"=>"2800.0", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007ff0d00a8d90 @tempfile=#<Tempfile:/tmp/RackMultipart20210618-57025-1p6ix9u.png>, @original_filename="Screenshot from 2021-06-08 16-18-38.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[avatar]\"; filename=\"Screenshot from 2021-06-08 16-18-38.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Product", "id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+[paperclip] Trying to link /tmp/RackMultipart20210618-57025-1p6ix9u.png to /tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png
+[paperclip] Trying to link /tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png to /tmp/638d8a49778515829627e33dc0d32e8220210618-57025-1t1brmk.png
+Command :: file -b --mime '/tmp/638d8a49778515829627e33dc0d32e8220210618-57025-1t1brmk.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png[0]'
+Command :: convert '/tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png[0]' -auto-orient -resize "330x300>" '/tmp/2a4e078f5c1b27b9d6f191314ca8c90720210618-57025-lhf00x'
+[paperclip] Trying to link /tmp/2a4e078f5c1b27b9d6f191314ca8c90720210618-57025-lhf00x to /tmp/f67e89dbdecd3af9961ec29206d538f920210618-57025-13nfivq
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png[0]'
+Command :: convert '/tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png[0]' -auto-orient -resize "100x100>" '/tmp/2a4e078f5c1b27b9d6f191314ca8c90720210618-57025-w9nkfo'
+[paperclip] Trying to link /tmp/2a4e078f5c1b27b9d6f191314ca8c90720210618-57025-w9nkfo to /tmp/7356d8ef12e9b851f4c3716328b94c5c20210618-57025-l5k4i2
+[paperclip] Trying to link /tmp/1a024d1739ae7f1fab77b82f6f1a30f220210618-57025-181opyz.png to /tmp/638d8a49778515829627e33dc0d32e8220210618-57025-1768j7.png
+Command :: file -b --mime '/tmp/638d8a49778515829627e33dc0d32e8220210618-57025-1768j7.png'
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["avatar_file_name", "Screenshot_from_2021-06-08_16-18-38.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 186381], ["avatar_updated_at", "2021-06-18 14:41:23.884095"], ["updated_at", "2021-06-18 14:41:24.329323"], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:40
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:40
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 466ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2021-06-18 11:41:24 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 109ms (Views: 107.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:41:26 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 129ms (Views: 127.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/products?order=id_asc" for 127.0.0.1 at 2021-06-18 11:41:28 -0300
+Processing by Admin::ProductsController#index as HTML
+  Parameters: {"order"=>"id_asc"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/helpers/collection.rb:9
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb (132.2ms)
+Completed 200 OK in 139ms (Views: 135.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-06-18 11:47:38 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 685ms (Views: 674.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2021-06-18 11:47:40 -0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/page/index.html.arb
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/page/index.html.arb (108.8ms)
+Completed 200 OK in 132ms (Views: 110.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2021-06-18 11:47:43 -0300
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/helpers/collection.rb:9
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb (123.1ms)
+Completed 200 OK in 130ms (Views: 125.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/products/1" for 127.0.0.1 at 2021-06-18 11:47:53 -0300
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/resource_controller/data_access.rb:104
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Product"], ["resource_id", 1], ["namespace", "admin"]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/orm/active_record/comments/views/active_admin_comments.rb:26
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Product"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/orm/active_record/comments/views/active_admin_comments.rb:30
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/show.html.arb (161.6ms)
+Completed 200 OK in 169ms (Views: 163.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2021-06-18 11:47:57 -0300
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/base_controller.rb:39
+  Rendering /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/lib/active_admin/helpers/collection.rb:9
+  Rendered /home/gabrielerocha/.rvm/gems/ruby-2.6.1/bundler/gems/activeadmin-45e8bf80bd8a/app/views/active_admin/resource/index.html.arb (144.6ms)
+Completed 200 OK in 153ms (Views: 147.4ms | ActiveRecord: 0.6ms)
+
+
