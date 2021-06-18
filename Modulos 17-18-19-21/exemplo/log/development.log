@@ -1128,3 +1128,41 @@ Processing by ProdutosController#index as HTML
 Completed 200 OK in 31ms (Views: 23.1ms | ActiveRecord: 6.0ms)
 
 
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 16:20:36 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 1703ms (Views: 1689.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/produtos/index" for 127.0.0.1 at 2021-06-17 16:23:50 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/gabrielerocha/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`id` = 0 LIMIT 1[0m
+  ↳ app/controllers/produtos_controller.rb:62
+Completed 404 Not Found in 14ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Produto with 'id'=index):
+  
+app/controllers/produtos_controller.rb:62:in `set_produto'
+Started GET "/produtos" for 127.0.0.1 at 2021-06-17 16:23:55 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT `produtos`.* FROM `produtos`[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 414ms (Views: 412.6ms | ActiveRecord: 0.5ms)
+
+
