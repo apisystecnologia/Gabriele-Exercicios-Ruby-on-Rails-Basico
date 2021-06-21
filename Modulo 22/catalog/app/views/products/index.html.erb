@@ -1,22 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1 class="center">Produtos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Price</th>
+      <th>Nome</th>
+      <th>Preço</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
-      <tr>
+    <% @products.each_with_index do |product, index| 
+      css_class = if(index.even?)
+                    "normal-row"
+                  else
+                    "gray-row"
+                  end
+                  "centro"
+    %>
+      <tr class="<%= css_class %>">
         <td><%= product.name %></td>
         <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Mais', product %></td>
       </tr>
     <% end %>
   </tbody>
